@@ -1,0 +1,44 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+              "aircraft": [
+                "Varies"
+              ],
+              "anchor": 101346,
+              "description": "Professional full-time skydiving school and rating academy.  By appointment only, please.",
+              "email": "aircrew@web.de",
+              "location": [
+                "Kirchberg 7",
+                "Reichersbeuern D-83677 Germany",
+                "50 km S of Munich",
+                "1 km to nearest hotel"
+              ],
+              "name": "AIRCREW & Airfox SD Academy",
+              "phone": "49 177 7755747",
+              "services": [
+                "Equipment Rental/Sales",
+                "Packing Service",
+                "Rigging Service",
+                "Videographers"
+              ],
+              "training": [
+                "IAD",
+                "SL",
+                "AFF",
+                "Tandem"
+              ],
+              "website": "http://www.aircrew.de"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                11.6294,
+                47.37658
+              ]
+            }
+          }
+    ]
+}

@@ -53,6 +53,8 @@ For the swagger.yml file, here are the object types:
 
 Marshmallow helps you to create a PersonSchema class, which is like the SQLAlchemy Person class you just created. The PersonSchema class defines how the attributes of a class will be converted into JSON-friendly formats. Marshmallow also makes sure that all attributes are present and contain the expected data type.  
 
+By default, a Marshmallow schema doesn’t traverse into related database objects. You have to explicitly tell a schema to include relationships.  
+
 
 
 
