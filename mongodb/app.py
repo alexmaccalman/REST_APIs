@@ -7,33 +7,54 @@ import json
 
 app = Flask(__name__)
 
-client = MongoClient()
+client = MongoClient(host="172.17.0.2", port=27017)
 db = client.geojson_flask
-geodata_collection = db.geodata
+geodata_collection = db.geodata_collection
 
 # client = MongoClient("mongodb://localhost:27017/")
 # db = client["mydatabase"]
 # addresses = db["addresses_collection"]
 
 # Read GeoJSON file from local system
-with open("points.geojson") as f:
-  data = json.load(f)
+# with open("points.geojson") as f:
+#   data = json.load(f)
 
-# Insert GeoJSON data into collection
-geodata_collection.insert_one(data)
 
-@app.route('/geojson-features', methods=['GET'])
+
+# @app.route('/geojson-features', methods=['GET'])
+# def get_all_points():
+#     features = []
+#     for geo_feature in geodata_collection.find({}):
+#         features.append({
+#             "type": "FeatureCollection",
+#             "geometry": {
+#                 "type": geo_feature['geometry']['type'],
+#                 "coordinates": geo_feature['geometry']['coordinates']
+#             }
+#         })
+#     return jsonify(features)
+
+for feature in geodata_collection.find({}):
+  print(feature['geometry']['coordinates'])
+
+@app.route('/points', methods=['GET'])
 def get_all_points():
     features = []
+    geojson ={
+        "features":[]
+    }
     for geo_feature in geodata_collection.find({}):
         features.append({
-            "type": "FeatureCollection",
+            "type": "Feature",
+            "properties": geo_feature["properties"],
             "geometry": {
-                "type": geo_feature['geometry']['type'],
-                "coordinates": geo_feature['geometry']['coordinates']
+                "type": geo_feature["geometry"]["type"],
+                "coordinates": geo_feature["geometry"]["coordinates"]
             }
         })
-    return jsonify(features)
+        
+    geojson["features"] = features
+    return jsonify(geojson)
 
 @app.route('/')
 def main():

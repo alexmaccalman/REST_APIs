@@ -39,6 +39,42 @@
                 47.37658
               ]
             }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "aircraft": [
+                "2 Cessna 210s"
+              ],
+              "anchor": 100502,
+              "description": "Friendly first timers and experienced jumpers welcome!  2 hrs north of Philly/2 hrs west of NYC.    Open weekends year round, and Friday after work  May thru October.  Operated by Guinness Record Holder '92-present. VR Canopy flight available for all ages.",
+              "email": "info@paskydive.com",
+              "location": [
+                "5159 Old Airport Rd",
+                "Hazle Township PA 18202-3238 US",
+                "90 miles W of New York City",
+                "1 mile to nearest hotel"
+              ],
+              "name": "Above The Poconos Skydivers / NEPA Ripcords, Inc.",
+              "phone": "(570) 450-7211",
+              "services": [
+                "Packing Service",
+                "Videographers"
+              ],
+              "training": [
+                "IAD",
+                "Tandem",
+                "AFF"
+              ],
+              "website": "http://paskydive.com"
+            },
+            "geometry": {
+              "type": "Point",
+              "coordinates": [
+                -75.9948889,
+                40.9867778
+              ]
+            }
           }
     ]
 }
