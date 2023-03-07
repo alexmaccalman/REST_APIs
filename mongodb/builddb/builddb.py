@@ -5,7 +5,7 @@ client = MongoClient(host="172.17.0.2", port=27017)
 db = client.geojson_flask
 geodata_collection = db.geodata_collection
 
-with open("points.geojson") as f:
+with open("dropzones.geojson") as f:
   data = json.load(f)
 
 #print(data["features"][0]["properties"]["name"])

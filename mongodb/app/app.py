@@ -34,8 +34,8 @@ geodata_collection = db.geodata_collection
 #         })
 #     return jsonify(features)
 
-for feature in geodata_collection.find({}):
-  print(feature['geometry']['coordinates'])
+# for feature in geodata_collection.find({}):
+#   print(feature['geometry']['coordinates'])
 
 @app.route('/points', methods=['GET'])
 def get_all_points():
