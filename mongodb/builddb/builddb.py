@@ -1,7 +1,7 @@
 import json
 from pymongo import MongoClient
 
-client = MongoClient(host="172.17.0.2", port=27017)
+client = MongoClient(host="mongodb://mongo", port=27017)
 db = client.geojson_flask
 geodata_collection = db.geodata_collection
 
@@ -24,8 +24,7 @@ for i in range(len(data["features"])):
     })
 
 #print(addresses.find({"type": "'Point"}))
-for feature in geodata_collection.find({}):
-  print(feature["properties"])
+
 
 # geodata_collection.delete_many({})
 # print(geodata_collection.count_documents({}))

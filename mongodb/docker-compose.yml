@@ -22,10 +22,12 @@ services:
   mapapp:
     build:
       context: ./app
+    ports:
+      - "5000:5000"
     depends_on:
       - builddb
-  networks:
-      - app-network
+    networks:
+        - app-network
 
 networks:
   app-network:

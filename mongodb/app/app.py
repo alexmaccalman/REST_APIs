@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 
-client = MongoClient(host="172.17.0.2", port=27017)
+client = MongoClient(host="mongodb://mongo", port=27017)
 db = client.geojson_flask
 geodata_collection = db.geodata_collection
 
@@ -60,4 +60,6 @@ def get_all_points():
 def main():
     return render_template('main.html')
 
-app.run()
+if __name__ == "__main__":
+    #app.run()
+    app.run(debug=True)
