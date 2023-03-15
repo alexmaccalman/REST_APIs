@@ -1,0 +1,34 @@
+
+<!-- index.html -->
+
+<html>
+<head>
+  <title>Flask App</title>
+</head>
+<body>
+  <h1>Flask App</h1>
+  <!-- Use Flask-WTF macros to render only relevant parts of form -->
+  
+  {% import "bootstrap/wtf.html" as wtf %}
+
+  <form method="POST" action="/">
+    {{ form.csrf_token }}
+    {{ wtf.form_field(form.recipe_name) }}
+    <!-- {{ wtf.form_field(form.submit) }} -->
+    <input type="submit" value="Submit">
+  </form>
+ 
+  
+  <!-- Check if there is any data available -->
+  {% if data %}
+  <!-- Display it in a table or a list -->
+  <table>
+    <tr><th>Key</th><th>Value</th></tr>
+    {% for key, value in data.items() %}
+      <tr><td>{{ key }}</td><td>{{ value }}</td></tr>
+    {% endfor %}
+  </table>
+  {% endif %}
+
+</body>
+</html>
